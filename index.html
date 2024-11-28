@@ -1,0 +1,56 @@
+<center>
+<div class="container">
+<h1>LETS PLAY A GAME</h1>
+<h1> GUESS A NUMBER FROM 1 TO 5</h1>
+<input id="guessnumber" placeholder="Enter a number">
+<button onclick="checknumber()">click</button>
+<p id="result">your are right / wrong</p>
+<p id="score">Score=5</p>
+</div> 
+</center>
+
+<script>
+    var guessnumber=document.getElementById("guessnumber")
+    var result=document.getElementById("result")
+    var score=document.getElementById("score")
+    var randomnumber=Math.floor(Math.random()*4)+1
+    var totalscore=5
+    
+    function checknumber()
+     {
+    var enterno=guessnumber.value
+    if(randomnumber==enterno)
+    {
+        console.log("you are right")
+        alert("you won")
+        result.textContent="you won"
+
+    }
+    else{
+        console.log("you are wrong")
+    
+        result.textContent="you loss try next chance"
+        totalscore=totalscore-1
+        score.textContent="score:"+totalscore
+    }
+    }
+    
+</script>
+<style>
+    .container{
+        background:linear-gradient(to right,rgb(168, 202, 16),white);
+        padding: 20px;
+        display: inline-block;
+        border-color: black;
+        border-style: dashed;
+        
+    }
+    button{
+        background-color: red;
+        color: rgb(255, 255, 255);
+    }
+    p{
+        color: blueviolet;
+    
+    }
+</style>
